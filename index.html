@@ -1,84 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title><THEVOSS class="LIVE"></THEVOSS></title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
     <style>
+        /* Basic styles for layout and appearance */
         body {
+            font-family: 'Roboto', 'sans-serif';
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #000000;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #0000009c;
+            color: rgb(255, 255, 255);
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-image: url('images/horse.jpeg'); /* Local image for hero section */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #000000;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            position: relative;
+        }
+
+        .hero .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        /* Vlog Preview Section */
+        .vlog-previews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px;
+            background-color: #f7f7f7;
+        }
+
+        .vlog {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            background-color: white;
+
+        .vlog img {
+            max-width: 100%;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            font-size: 2.5rem;
-            color: #333;
+
+        .vlog h3 {
+            margin-top: 15px;
+            font-size: 1.5em;
         }
-        p {
-            font-size: 1.2rem;
-            color: #666;
+
+        .vlog p {
+            color: #000000;
+            margin-bottom: 20px;
         }
-        .countdown {
-            font-size: 1.5rem;
-            color: #ff5722;
-            margin: 20px 0;
-        }
-        .Subscribe {
-            margin-top: 20px;
-        }
-        input[type="email"] {
-            padding: 10px;
-            border: 1px solid #ccc;
+
+        .watch-now {
+            color: white;
+            background-color: #ff0000;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            width: 70%;
-            max-width: 300px;
         }
-        button {
-            padding: 10px 15px;
-            background-color: #ff5722;
+
+        /* About Section */
+        #about {
+            padding: 50px;
+            text-align: center;
+            background-color: #000000;
+            color: white;
+        }
+
+        #about h2 {
+            font-size: 2em;
+        }
+
+        /* Subscription Form */
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .subscribe-form input {
+            padding: 10px;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .subscribe-form button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #ff0000;
             color: white;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 10px;
         }
-        button:hover {
-            background-color: #e64a19;
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .vlog-previews {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Coming Soon!</h1>
-<div class="image">
-        	<img src="images/thevoss.LIVE.PNG"
-    </div>
 
-    <p>We are working hard to launch our new website. Stay tuned!</p>
-    </div>
-    <div class="countdown" id="countdown"></div>
-    <div class="subscribe">
-        <p>Subscribe to get notified:</p>
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-    </div>
-    <div class="link">
-        <p>In the meantime, check out our <a href="https://www.kick.com/vosszach99" target="_blank">Live Stream</a>!</p>
-    </div>
-</div></div>
+     <!-- Navigation -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols"; [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    },
+    {
+      "description": "Solana",
+      "proName": "CRYPTO:SOLUSD"
+    },
+    {
+      "description": "Tesla",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "Dodge to USD",
+      "proName": "BITFINEX:DOGEUSD"
+    }
+  ],
+  "showSymbolLogo"; true,
+  "isTransparent"; false,
+  "displayMode"; "adaptive",
+  "colorTheme"; "dark",
+  "locale"; "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+  <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="live.html">Streams</a>
+        <a href="streams.html">Past Streams</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Section Wrapped in an Anchor Tag -->
+  
+    <section class="hero">
+      <div class="overlay">
+        <h1>Welcome to THEVOSS.LIVE</h1>
+        <p>Capturing Life's Moments One Stream At A Time</p>
+      </div>
+    </section>
+  </a>
+
+  <!-- Vlog Previews Section with "Watch Now" Buttons -->
+<section class="vlog-previews">
+  <div class="vlog">
+    <img src="images/videopreview.jpeg" alt="Vlog 1">
+    <h3>My Trip to Mackinac Island</h3>
+    <p>Explore the beauty of Mackinac Island with my family.</p>
+    <a href="streams.html" class="watch-now">Watch Now</a>
+  </div>
+  <div class="vlog">
+    <img src="images/videopreview.jpeg" alt="Vlog 2">
+    <h3>A Day in the Life</h3>
+    <p>Join me for a behind-the-scenes look at my daily routine.</p>
+    <a href="streams.html" class="watch-now">Watch Now</a>
+  </div>
+  <div class="vlog">
+    <img src="images/videopreview.jpeg" alt="Vlog 3">
+    <h3>Exploring Nature</h3>
+    <p>Follow me on an adventurous hike through stunning landscapes.</p>
+    <a href="streams.html" class="watch-now">Watch Now</a>
+  </div>
+</section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Zach! I love sharing life’s adventures, whether it’s traveling or capturing everyday moments. Join my LIVE journey!</p>
+  </section>
+
+  <!-- Subscription Form -->
+  <form action="/subscribe" method="post" class="subscribe-form">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+
+ 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 THEVOSS.LIVE All rights reserved.</p>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | THEVOSS.LIVE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+     /* Basic styles for layout and appearance */
+     body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove body margin */
+            padding: 0; /* Remove body padding */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgb(0, 0, 0); /* Slight transparency for effect */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            z-index: 1; /* Ensure navbar is above hero image */
+        }
+
+        .navbar a {
+            color: rgb(48, 48, 48);
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #000000;
+            color: black;
+        }
+
+       /* Footer */
+       footer {
+            padding: 20px;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+  </style>
+</head>
+<body>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    },
+    {
+      "description": "Solana",
+      "proName": "CRYPTO:SOLUSD"
+    },
+    {
+      "description": "Tesla",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "Dodge to USD",
+      "proName": "BITFINEX:DOGEUSD"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="live.html">Streams</a></li>
+      <li><a href="streams.html">Past Streams</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Content -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me at: <a href="mailto:unitydigitalmedia101@gmail.com">unitydigitalmedia101@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 THEVOSS.LIVE All rights reserved.</p>
+  </footer>
+</body>
+</html>

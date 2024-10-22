@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><THEVOSS.LIVE><class="LIVE"></THEVOSS></title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        /* Basic styles for layout and appearance */
+        body {
+            font-family: 'Roboto', 'sans-serif';
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #000000;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #8d8c8c9c;
+            color: rgb(255, 255, 255);
+        }
+    /* Dark Mode - Applied by Default */
+    :root {
+      --background-color: #f7f7f7;
+      --text-color: #000000;
+      --card-background-color: #ffffff;
+      --card-shadow: rgba(255, 255, 255, 0.1);
+      --modal-background: rgba(255, 255, 255, 0.1);
+      --modal-content-background: #ffffff;
+      --modal-text-color: #000000;
+    }
+
+    /* Apply variables to elements */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    /* Grid container for video items */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Styling for individual video cards */
+    .video-item {
+      background-color: var(--card-background-color);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .video-item:hover {
+      box-shadow: 0 4px 12px var(--card-shadow);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Styling for video details below the thumbnail */
+    .video-info {
+      padding: 10px;
+    }
+
+    .video-info h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .video-info .video-details {
+      font-size: 14px;
+      color: var(--text-color);
+    }
+
+    /* Modal (pop-up video player) styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--modal-background);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Video player inside modal */
+    .modal-content {
+      position: relative;
+      padding: 20px;
+      max-width: 800px;
+      background-color: var(--modal-content-background);
+      color: var(--modal-text-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Close button for modal */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: var(--modal-text-color);
+      cursor: pointer;
+    }
+
+    /* Video description box inside modal */
+    .modal-description {
+      margin-top: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+ <!-- Navigation -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols"; [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    },
+    {
+      "description": "Solana",
+      "proName": "CRYPTO:SOLUSD"
+    },
+    {
+      "description": "Tesla",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "Dodge to USD",
+      "proName": "BITFINEX:DOGEUSD"
+    }
+  ],
+  "showSymbolLogo"; true,
+  "isTransparent"; false,
+  "displayMode"; "adaptive",
+  "colorTheme"; "dark",
+  "locale"; "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+  <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="live.html">Streams</a>
+        <a href="streams.html">Past Streams</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+  </nav>
+<body>
+
+  <h2>My Past Streams</h2>
+
+  <!-- Video Grid Container -->
+  <div class="video-grid">
+    <div class="video-item" onclick="openVideoPlayer('videos/Its-Friday-Desktop-Stream_10-18-24.mp4', 'Its Friday [Desktop Stream]', '2024-10-18', 'video1Views')">
+      <div class="thumbnail">
+        <img src="thumbnails/Labor-Day-2023.jpg" alt="It's Friday [Desktop Stream]">
+      </div>
+      <div class="video-info">
+        <h3>It’s Friday [Desktop Stream]</h3>
+        <div class="video-details">
+          <span>Date Created: 2024-10-18</span><br>
+          <span id="video1Views">Views: 0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-item" onclick="openVideoPlayer('videos/Neon,Cinna, and Work Stream_10-15-24.mp4', 'Neon, Cinna, and Work Stream', '2024-10-15', 'video2Views')">
+      <div class="thumbnail">
+        <img src="thumbnails/Labor-Day-2023.jpg" alt="Neon, Cinna, and Work Stream">
+      </div>
+      <div class="video-info">
+        <h3>Neon, Cinna, and Work Stream</h3>
+        <div class="video-details">
+          <span>Date Created: 2024-10-15</span><br>
+          <span id="video2Views">Views: 0</span>
+        </div>
+      </div>
+    </div>
+
+     <div class="video-item" onclick="openVideoPlayer('videos/Sleep-Stream_9-4-24.mp4', 'Sleep-Stream_9-4-24.mp4', '2024-9-4', 'video2Views')">
+      <div class="thumbnail">
+        <img src="thumbnails/Labor-Day-2023.jpg" alt="Sleep Stream">
+      </div>
+      <div class="video-info">
+        <h3>Sleep Stream</h3>
+        <div class="video-details">
+          <span>Date Created: 2024-9-4</span><br>
+          <span id="video2Views">Views: 0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-item" onclick="openVideoPlayer('videos/Friday-Desktop-Stream_(Part-1)_8-30-24.mp4', 'Friday Desktop Stream (Part 1)', '2024-8-30', 'video2Views')">
+      <div class="thumbnail">
+        <img src="thumbnails/Labor-Day-2023.jpg" alt="Friday Desktop Stream (Part 1)">
+      </div>
+      <div class="video-info">
+        <h3>Friday Desktop Stream (Part 1)</h3>
+        <div class="video-details">
+          <span>Date Created: 2024-8-30</span><br>
+          <span id="video2Views">Views: 0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-item" onclick="openVideoPlayer('videos/Friday-Desktop-Stream_(Part-2)_8-30-24.mp4', 'Friday Desktop Stream (Part 2)', '2024-8-30', 'video2Views')">
+      <div class="thumbnail">
+        <img src="thumbnails/Labor-Day-2023.jpg" alt="Friday Desktop Stream (Part 2)">
+      </div>
+      <div class="video-info">
+        <h3>Friday Desktop Stream (Part 2)</h3>
+        <div class="video-details">
+          <span>Date Created: 2024-8-30</span><br>
+          <span id="video2Views">Views: 0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-item" onclick="openVideoPlayer('videos/React-to-AMP-House_Trump-X-Elon_and_MORE_Desktop-Stream_8-13-24.mp4', 'REACT to AMP House Trump-X-Elon and MORE [Desktop Stream]', '2024-8-30', 'video2Views')">
+      <div class="thumbnail">
+        <img src="thumbnails/Labor-Day-2023.jpg" alt="REACT to AMP House Trump-X-Elon and MORE [Desktop Stream]">
+      </div>
+      <div class="video-info">
+        <h3>REACT to AMP House Trump-X-Elon and MORE [Desktop Stream]</h3>
+        <div class="video-details">
+          <span>Date Created: 2024-8-13</span><br>
+          <span id="video2Views">Views: 0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more videos here as needed -->
+  </div>
+
+  <!-- Modal Video Player -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeVideoPlayer()">&times;</span>
+      <video id="modalVideoPlayer" controls autoplay style="width: 100%; height: auto;">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="modal-description">
+        <h3 id="modalVideoTitle">Video Title</h3>
+        <p id="modalVideoDate">Date Created: </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript to handle video modal functionality and dark mode -->
+  <script>
+    function openVideoPlayer(videoSrc, videoTitle, videoDate, viewCountId) {
+      // Show the modal
+      const modal = document.getElementById('videoModal');
+      modal.style.display = 'flex';  // Use 'flex' for centering modal
+
+      // Set the video source and title dynamically
+      const videoPlayer = document.getElementById('modalVideoPlayer');
+      videoPlayer.src = videoSrc;
+      videoPlayer.play();
+
+      // Set the video title and date in the modal
+      const modalTitle = document.getElementById('modalVideoTitle');
+      const modalDate = document.getElementById('modalVideoDate');
+      modalTitle.innerText = videoTitle;
+      modalDate.innerText = "Date Created: " + videoDate;
+
+      // Increment the view count dynamically
+      const viewCountElement = document.getElementById(viewCountId);
+      let currentViews = parseInt(viewCountElement.innerText.split(' ')[1]);
+      viewCountElement.innerText = 'Views: ' + (currentViews + 1);
+    }
+
+    function closeVideoPlayer() {
+      // Hide the modal
+      const modal = document.getElementById('videoModal');
+      modal.style.display = 'none';
+
+      // Stop the video playback
+      const videoPlayer = document.getElementById('modalVideoPlayer');
+      videoPlayer.pause();
+      videoPlayer.src = ''; // Reset the video source
+    }
+
+    // Close the modal when the user clicks anywhere outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('videoModal');
+      if (event.target === modal) {
+        closeVideoPlayer();
+      }
+    }
+  </script>
+
+</body>
+</html>
